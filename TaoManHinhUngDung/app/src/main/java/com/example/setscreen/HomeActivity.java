@@ -1,26 +1,42 @@
 package com.example.setscreen;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class HomeActivity extends AppCompatActivity {
 
-    @SuppressLint("MissingInflatedId")
+    Button btnOrderFood, btnUpdateInfo, btnLogout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // Ánh xạ
+        btnOrderFood = findViewById(R.id.btnOrderFood);
+        btnUpdateInfo = findViewById(R.id.btnUpdateInfo);
+        btnLogout = findViewById(R.id.btnLogout);
+
+        // Sự kiện cho nút Đặt món ăn
+        btnOrderFood.setOnClickListener(v -> {
+            startActivity(new Intent(HomeActivity.this, OrderFoodActivity.class));
+        });
+
+        // Sự kiện cho nút Cập nhật thông tin
+        btnUpdateInfo.setOnClickListener(v -> {
+            startActivity(new Intent(HomeActivity.this, UpdateInfoActivity.class));
+        });
+
+        // Sự kiện cho nút Đăng xuất
+        btnLogout.setOnClickListener(v -> {
+            // Tạo Intent để quay về màn hình đăng nhập (MainActivity)
+            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            // Các flag này giúp xóa tất cả các màn hình trước đó và tạo một task mới
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         });
     }
 }

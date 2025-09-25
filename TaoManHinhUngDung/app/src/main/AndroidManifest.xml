@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SetScreen">
         <activity
+            android:name=".UpdateInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostPaymentChoiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderFoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
