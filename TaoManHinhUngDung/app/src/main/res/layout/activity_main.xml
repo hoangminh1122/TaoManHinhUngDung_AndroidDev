@@ -53,6 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:attr/borderlessButtonStyle"
-        android:text="Create account"/>
+        android:text="Create account"
+        android:textColor="@android:color/black" />
 
 </LinearLayout>
