@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cập Nhật Thông Tin"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <ImageView android:id="@+id/ivAvatar" android:layout_width="100dp" android:layout_height="100dp" android:src="@android:drawable/ic_menu_camera" android:layout_gravity="center"/>
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Họ và tên"/>
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Số điện thoại"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp">
+
+        <Button android:id="@+id/btnExit" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Thoát" android:layout_marginEnd="8dp"/>
+        <Button android:id="@+id/btnConfirmUpdate" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Xác nhận" android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout>
